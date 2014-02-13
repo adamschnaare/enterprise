@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.code }} - {{ page.name | capitalize }} | Library Record</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--STYLES: INCLUDE IN PROD-->
+        <link href="{{ site.baseurl }}assets/less/build/css/{{ page.theme }}.css" rel="stylesheet">
+        {% contentblock styles %}
+    <!--STYLES: DO NOT INCLUDE IN PROD-->
+        <link href="{{ site.baseurl }}assets/less/docs/css/docs.css" rel="stylesheet">
+    <!------>
+    <!--SCRIPTS: INCLUDE IN PROD-->
+        <!--[if lt IE 9]>
+            <link href="{{ site.baseurl }}assets/less/shim/css/shim-ie-only.css" rel="stylesheet">
+            <script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/respond.min.js"></script>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="{{ site.baseurl }}assets/js/libs/selectivizr-min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/custom/ie-mediaqueries.js"></script>
+        <!--<script type="text/javascript" src="https://use.typekit.net/hon8eiw.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+        <!--<script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/jquery-1.7.0.min.js"></script>-->
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/handlebars.1.0.0.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/custom/pubsub.jquery.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/custom/utils.js"></script>
+        <!--<script type="text/javascript" src="{{ site.baseurl }}assets/js/libs/jquery.ba-hashchange.min.js"></script>-->
+
+
+    <!--SCRIPTS: DO NOT INCLUDE IN PROD-->
+        <script type="text/javascript" src="{{ site.baseurl }}assets/js/docs/docs.js"></script>
+
+    <script type="text/javascript">
+
+        // Get Query String Values
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        var customValues = getUrlVars();
+
+
+        // Check for Domain
+        var thisDomain = document.domain;
+        var gaDomain = ( thisDomain == 'yearbookavenue.jostens.com' || thisDomain == 'resources.yearbookavenue.jostens.com' || thisDomain == 'cdn.yearbookavenue.jostens.com' ) ? 'yearbookavenue.jostens.com' : 'library.jostenscreative.com';
+        var gaAccount = ( thisDomain == 'yearbookavenue.jostens.com' || thisDomain == 'resources.yearbookavenue.jostens.com' ||  thisDomain == 'cdn.yearbookavenue.jostens.com' ) ? 'UA-2450439-6' : 'UA-11439857-6';
+
+        // Google Analytics Code
+        var _gaq = _gaq || [];
+        var pluginUrl ='//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', gaAccount]);
+        _gaq.push(['_setDomainName', gaDomain]);
+        _gaq.push(['_setCustomVar', 1, 'rolename', customValues.rolename, 2]); // Custom Variables
+        _gaq.push(['_trackPageview', location.pathname]);
+
+        // Outbound Links
+        function trackOutboundLink(link, category, action) {
+            try { _gaq.push(['_trackEvent', category , action]); } catch(err){}
+            setTimeout(function() { document.location.href = link.href; }, 100);
+        }
+
+        // Event: On Hash change
+//        $(window).hashchange( function(){
+//            _gaq.push(['_trackPageview', location.pathname + location.hash]);
+//        });
+        window.addEventListener("hashchange", ( function(){ // JS standard...but might not work with older browsers.
+            _gaq.push(['_trackPageview', location.pathname + location.hash]);
+        }), false);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+
+<body class="{% if page.docs-hidden == true %}docs-hidden{% endif %}">
+
+<!--Docs-->
+{% if page.docs-enable == true %}<a class="btn btn-small docs-toggle">Toggle Docs</a>{% endif %}
+<div class="docs docs-header hidden-print">
+    <a class="btn btn-default" href="{{ site.baseurl }}library.html"><i class="glyphicons home"></i></a>
+    <h3 class="docs-page-name">{{ page.name | capitalize }}</h3>
+    {% if page.record-type != 'experience' %}
+    {% if page.record-type != 'theme' %}
+        <h3>Experience: <a href="{{ site.baseurl }}records/{{ page.experience }}"><small>{{ page.experience | capitalize }}</small></a></h3>
+    {% endif %}
+    {% endif %}
+    <h3>Type: <small>{{ page.record-type | capitalize }}</small></h3>
+    {% if page.theme != page.name %}<h3>Theme: <a href="{{ site.baseurl }}records/theme-{{ page.theme | downcase }}.html"><small>{{ page.theme | capitalize }}</small></a></h3>{% endif %}
+</div>
+
+
+<!--Example-->
+<div class="{% if page.docs-container == true %}container{% endif %} docs-example {% if page.docs-no-padding == true %}docs-no-padding{% endif %}">
+
+    {{ content }}
+
+</div><!--Example-->
+
+<div class="docs docs-aside hidden-print">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#notes" data-toggle="tab">Notes</a></li>
+        <li><a href="#relatives" data-toggle="tab">Relatives</a></li>
+
+        <a class="btn docs-slide-trigger pull-right"><i class="glyphicons fullscreen"></i></a>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in" id="relatives">
+            <!--Global-->
+            {% assign this-name = page.name %}
+            <!--!Global-->
+
+            <!--Usage-->
+            {% if page.record-type == 'component' %}
+            <h2>Usage in {{ page.experience | capitalize }}</h2>
+            <table class="table table-striped">
+
+                <tbody>
+                {% for page in site.pages %}
+                {% for item in page.children %}
+                {% if item == this-name %}
+                <tr>
+                    <td><a href="{{ page.url }}">{{ page.name | capitalize }}</a></td>
+                    <td>{{ page.record-type | capitalize }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            <!--!Usage-->
+
+            <!--Children-->
+            {% if page.children %}
+            <h2>Children in {{ page.name | capitalize }}</h2>
+            <table class="table table-striped">
+
+                <tbody>
+                {% for item in page.children %}
+                <tr>
+                    <td><a href="{{ site.baseurl }}records/{{ page.experience }}/{{ item }}.html">{{ item | capitalize }}</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            <!--!Children-->
+
+            <!--Variants-->
+            {% if page.variants %}
+            <h2>Variants of {{ page.name | capitalize }}</h2>
+            <table class="table table-striped">
+
+                <tbody>
+
+                {% for item in page.variants %}
+                <tr>
+                    <td><a href="{{ site.baseurl }}records/{{ page.experience }}/{{ item }}.html">{{ item | capitalize }}</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            <!--!Variants-->
+
+        </div>
+        <div class="tab-pane fade in active" id="notes">
+            {% contentblock notes %}
+        </div>
+    </div>
+</div>
+
+<!--SCRIPTS: INCLUDE IN PROD-->
+{% contentblock scripts %}
+</body>
+</html>
+

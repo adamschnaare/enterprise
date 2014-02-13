@@ -1,0 +1,35 @@
+---
+layout: records
+docs-container: true
+docs-hidden: false
+docs-no-padding: false
+---
+<h2>Records in {{ page.name | capitalize }}:</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <!--<th>Code</th>-->
+
+        <th>Name</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% assign this-theme = page.theme %} <!--Grab the page variable before we go into the loop-->
+    {% for page in site.pages  %}
+        {% if page.theme == this-theme %}
+            <tr>
+                <td><a href="{{ page.url }}">{{ page.name | capitalize }}</a></td>
+                <!--<td><a href="{{ page.url }}">{{ page.code }}</a></td>-->
+                <td><a href="{{ site.baseurl }}records/{{ page.experience }}"><small>{{ page.experience | capitalize }}</small></a></td>
+                <td>{{ page.record-type | capitalize }}</td>
+                <td>{{ page.status | capitalize }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+
+{{ content }}

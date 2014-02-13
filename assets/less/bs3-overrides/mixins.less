@@ -1,0 +1,110 @@
+/* ==================================
+    Supplimental Mixins (waiting to see if these get included in BS3 or not
+=================================== */
+
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+#translucent {
+  .background(@color: @white, @alpha: 1) {
+    background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    // IE Hacks...probably still need to be overridden
+  }
+  .border(@color: @white, @alpha: 1) {
+    border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    background-clip: padding-box;
+  }
+}
+
+#arrow {
+ .right(@size:4px, @color:@white){
+   width: 0;
+   height: 0;
+   border-top: @size solid transparent;
+   border-bottom: @size solid transparent;
+   border-left: @size solid @color;
+   display: inline-block;
+ }
+  .left(@size:4px, @color:@white){
+    width: 0;
+    height: 0;
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right: @size solid @color;
+    display: inline-block;
+  }
+  .up(@size:4px, @color:@white){
+    width: 0;
+    height: 0;
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+    display: inline-block;
+  }
+
+}
+
+// Media
+.video() {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom:56.25%;
+  display: block;
+}
+.video-inner() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+// Gradients
+#gradient {
+  .striped(@color: #555, @angle: -45deg) {
+    background-color: @color;
+    background-image: url('@{asset-img-path}/progress-bar-striped.png') !important;
+  }
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+
+
+// Alerts overrides
+.alert-variant(@background, @border, @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@text-color, 10%);
+  }
+  // added this part
+  .alert-btn{
+    .button-variant(@white, @text-color, darken(@text-color, 10%))
+  }
+}
+
+
+// Positioning
+// --------------------------------------------------
+.center-vertically(@height: 44px){
+  height: @height;
+  top: 50%;
+  margin-top: -(@height/2);
+}
+
+// Creates a wrapper for a series of columns
+.make-row{
+  &.max-width{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

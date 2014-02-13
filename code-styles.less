@@ -1,0 +1,78 @@
+//
+// Coding snippets and naming conventions
+// (ADS - 2/6/14)
+// --------------------------------------------------
+
+
+@new-variable:  value;        // Place new variables at the top of the document for quick reference/discussion, also then we don't have to push the changes to all other themes while quickly developing
+
+.component{
+  display: inline-block;      // styles, etc...
+  style: @new-variable;
+
+  .child-selector{}
+
+  // Variant ----------------------------------------
+  &.component-variant{
+    display: none;            // override styles, etc...
+
+    &.modify-selector{}       // include parent component styles as needed for overrides/adjustments
+    .child-selector{}         // include parent component styles as needed for overrides/adjustments
+  }
+
+  @media (whatever) {         // nest media queries at the highest level (scope) of control needed, but at the bottom of the doc
+    .child-selector{}
+    &.component-variant{ /*etc...*/ }
+  }
+}
+
+
+
+// Comment ----------------------------------------
+
+//
+// Comment Big
+// --------------------------------------------------
+
+// TODO(Tag): Comment (ADS - 2/6/14)
+
+
+//
+// Variables
+// --------------------------------------------------
+
+// Naming Convention ----------------------------------------
+// @name-component-variant-state-style
+// Stay away from color in the name definition, instead describe function
+#example{
+  font-size: @example-font-size;
+  color: @example-color;
+  background: @example-bg;
+  &:hover{
+    color: @example-hover-color;
+  }
+
+  .component{
+    color: @example-component-color;
+
+    &:hover{
+      color: @example-component-hover-color;
+    }
+  }
+}
+
+// Abstraction & Definition ----------------------------------------
+// In general, abstract as much as possible. The goal is to be able to control everything from the variable file
+// Things to abstract:
+// Measurements
+// Color
+
+
+//
+// Variants
+// --------------------------------------------------
+// Stay away from color in the name definition, instead describe function
+
+
+
+

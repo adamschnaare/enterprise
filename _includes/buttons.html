@@ -1,0 +1,79 @@
+<h3>Sizes</h3>
+<p>
+    <button type="button" class="btn btn-lg btn-primary">Large button</button>
+    <button type="button" class="btn btn-lg">Large button</button>
+</p>
+<p>
+    <button type="button" class="btn btn-primary">Default button</button>
+    <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+    <button type="button" class="btn btn-sm btn-primary">Small button</button>
+    <button type="button" class="btn btn-sm">Small button</button>
+</p>
+<p>
+    <button type="button" class="btn btn-xs btn-primary">Mini button</button>
+    <button type="button" class="btn btn-xs">Mini button</button>
+</p>
+
+<h3>Options</h3>
+<!-- Standard gray button with gradient -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+
+<h3>Disabled State</h3>
+<h4 class="">Button element</h4>
+<button type="button" class="btn btn-large btn-primary" disabled="disabled">Primary button</button>
+<button type="button" class="btn btn-large" disabled="disabled">Button</button>
+<h4 class="">Anchor element</h4>
+<a href="#" class="btn btn-large btn-primary disabled">Primary link</a>
+<a href="#" class="btn btn-large disabled">Link</a>
+
+<h3>Processing States</h3>
+<h4>Starting State</h4>
+<button type="button" class="btn btn-primary"><i class="glyphicons shopping_cart"></i> Checkout</button>
+<br>
+<h4>"Processing" state</h4>
+<button type="button" class="btn btn-primary disabled"><i class="glyphicons shopping_cart"></i> Processing</button>
+
+<!--Scripts-->
+<script src="{{ site.baseurl }}assets/js/custom/bootstrap-collapse.js"></script>
+
+<!--============ Record is above this line ============-->
+
+
+
+{% contentfor notes %}
+<!--============ Docs  ============-->
+<h3>Sizes</h3>
+<p>There needs to be a good reason to deviate from default. Update these docs as needed.</p>
+<h3>Calls to action</h3>
+<p><strong>Primary:</strong> Always use <code>.btn-primary</code>.</p>
+<p><strong>Secondary:</strong> Always use <code>.btn-default</code>.</p>
+<p><strong>Other:</strong> Use <code>.btn-link</code> for action without prominance.</p>
+<h3>Todos</h3>
+<p>Look at progress bar or cycling elipsises</p>
+
+
+
+
+<!--============ ! Docs  ============-->
+{% endcontentfor %}
+

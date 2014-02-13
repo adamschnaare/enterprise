@@ -1,0 +1,37 @@
+name: Enterprise
+description: UX/Front-End Library
+author: Adam Schnaare
+author_email: adam.schnaare@jostens.com
+
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     [.htaccess,.gitignore]
+keep_files:  [.git,.svn]
+timezone:    nil
+
+future:      true
+show_drafts: nil
+limit_posts: 0
+pygments:    true
+
+relative_permalinks: false
+safe: false
+
+permalink:     date
+paginate_path: 'page:num'
+
+markdown:      maruku
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
+
+excerpt_separator: "\n\n"
+
+host:        0.0.0.0
+port:        4000
+baseurl:     /
+url:         http://localhost:4000
+
+

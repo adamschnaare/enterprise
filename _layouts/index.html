@@ -1,0 +1,237 @@
+---
+layout: default
+title: Home
+---
+    <div class="container docs-catalog">
+        <div class="row">
+            <div class="col col-lg-12">
+                <div class="page-header">
+                    <h1>{{ site.name | capitalize }} <small>{{ site.description | downcase }}</small></h1>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#catalog" data-toggle="tab">Catalog</a></li>
+                    <li><a href="#about" data-toggle="tab">About</a></li>
+                    <li><a href="#guide" data-toggle="tab">Guide</a></li>
+
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="catalog">
+                        <table id="datagrid-records" class="table table-striped table-hover"></table>
+                    </div>
+                    <div class="tab-pane fade" id="about">
+                        <div class="col col-lg-8">
+                            <h3>What's Included?</h3>
+                            <h4>Code Base</h4>
+                            <p>The <code>Code Base</code> is hosted on <a href="http://svn.jostens.com/svn/YBA/concepts/front-end-library">Josten's SVN</a>. Look in <code>/examples</code> for specific files. Live versions are referred to in the <code>Catalog</code>. The <code>Code Base</code> consists of:</p>
+                            <ol>
+                                <li><strong>Markup:</strong> Plain HTML. No Templating/processing</li>
+                                <li><strong>Styles:</strong> .LESS files compiled into .CSS files</li>
+                                <li><strong>Interaction:</strong> JavaScript, jQuery, etc...</li>
+                            </ol>
+
+                            <h4>Catalog</h4>
+                            <p>The <code>Catalog</code> is a list of all the <code>Records</code> in the library.</p>
+
+                            <h4>Docs</h4>
+                            <p>The <code>Docs</code> provide a space for:</p>
+                            <ul>
+                                <li>UX rationalle and direction</li>
+                                <li>Dev direction as available/necessary</li>
+                            </ul>
+                        </div>
+                        <div class="col col-lg-4">
+                            <!-- Button trigger modal -->
+                            <a data-toggle="modal" href="#myModal2"><img class="img-thumbnail" src="{{ site.baseurl }}assets/img/docs/whatsincluded.png"></a>
+                            <label>Whats Included</label>
+                        </div>
+                        <div class="col col-lg-8">
+                            <h3>Catalog Records</h3>
+                            <p>Library <code>Records</code> are items tracked by the library. They are as follows:</p>
+                            <!--<h3>Releases</h3>-->
+                            <h4>Themes</h4>
+                            <p><code>Themes</code> are collections of styles. Themes can be applied to any type of <code>Record</code>.</p>
+                            <h4>Experiences</h4>
+                            <p><code>Experiences</code> are collections of <code>Views</code>.</p>
+                            <h4>Views</h4>
+                            <p><code>Views</code> are collections of <code>Components</code>. Contains one-to-many components. Generally known as "pages", but describes what is viewable in a device's viewport.</p>
+                            <h4>Components</h4>
+                            <p><code>Components</code> are the meat of the Library. They are reusable parts to make something bigger: a page, a column, etc...  <code>Components</code> may contain other <code>Components</code>. <!--The types of Components are:--></p>
+                            <!--<ul>-->
+                            <!--<li><strong>Common</strong>: Aka elements. <code>li</code>, <code>p</code>, <code>h1</code>, <code>h2</code>, <code>table</code>, etc...</code></li>-->
+                            <!--<li><strong>Comp:Bootstrap</strong>: Chunks of HTML/CSS that is defined by Bootstrap, and restyled for our needs. May include JS plugins.</li>-->
+                            <!--<li><strong>Comp:Custom</strong>: Chunks of HTML/CSS that is defined and styled by us. May be based off of <code>Comp:Bootstrap</code> components. May include custom JS.</li>-->
+                            <!--</ul>-->
+                        </div>
+                        <div class="col col-lg-4">
+                            <!-- Button trigger modal -->
+                            <a data-toggle="modal" href="#myModal"><img class="img-thumbnail" src="{{ site.baseurl }}assets/img/docs/library01.png"></a>
+                            <label>Catalog Records</label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col col-lg-6">
+                            <h3>Catalog Attributes</h3>
+                            <p>Here's what will help describe Library Records in the Catalog</p>
+                            <h4>Type</h4>
+                            <p>Can be one of the following:</p>
+                            <ul>
+                                <li>Theme</li>
+                                <li>Experience</li>
+                                <li>View</li>
+                                <li>Component</li>
+                            </ul>
+                            <h4>Name</h4>
+                            <p>A record's <code>Name</code> is the key identifying attribute. A record's name should be how it is referenced by in all documentation, discussions, and designs through the business and software development lifecycle.</p>
+                            <h4>Experience & Theme</h4>
+                            <p>The <code>Experience</code> & <code>Theme</code> that the Record is attached to.</p>
+                            <h4>Status</h4>
+                            <p><code>Statuses</code> will define where a <code>Record</code> is in the development lifecycle:</p>
+                            <ol>
+                                <li><strong>Needs Review:</strong> Idea has been created; sketch, Photoshop, whatever...</li>
+                                <li><strong>In Review:</strong> Necessary parties review as needed: UX Team, stakeholders, product owners, etc...</li>
+                                <li><strong>Approved:</strong> Ready for production</li>
+                                <li><strong>Deprecated:</strong> Still supported, but no longer advancing in design</li>
+                                <li><strong>Retired:</strong> Not supported</li>
+                            </ol>
+                            <h3>Code Base System</h3>
+                            <h4>Folder Structure</h4>
+                            <pre>
+_includes       : common component html that is included in records
+_layouts        : doc system layouts
+_plugins        : doc system software
+_posts          : n/a
+_site           : parsed documents ready to be served
+assets
+|-- fonts          : glyphicons mostly
+|-- img            : all library images
+|-- js             : bootstrap scripts
+   |-- docs           : docs scripts
+   |-- jos            : jostens custom scripts
+   |-- libs           : script libraries (jquery, etc...)
+|-- less           : bootstrap less
+   |-- build          : theme build files
+   |-- docs           : doc system specific styles
+   |-- jos            : jostens custom styles
+docs            : html used in general documentation
+records         : all library records
+|-- exp_123        : library records are scoped by experience
+|-- exp_345        : ...
+|-- ...
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="guide">
+                        <h2>A.k.a <small>Style Guide, Design Patterns, Guidelines, etc...</small></h2>
+                        <p class="lead">Notes and rules about our design influences, ideal process</p>
+                        <div class="col col-lg-6">
+                            <h3>Design Rules</h3>
+                            <ul>
+                                <li><p>Jcom's great and mighty <a target="_blank" href="http://chucknorris.jostens.com/wiki/Wiki.jsp?page=JcomStyle">Chuck Norris</a>.</p></li>
+                                <li><p><a href="http://chucknorris.jostens.com:8080/wiki/attach/ATG%20Migration/Responsive%20approaches.docx" target="_blank">Responsive Design Write-up</a></p></li>
+                            </ul>
+                            <h3>Design Influences</h3>
+                            <ul>
+                                <li><p><a href="http://designshack.net/tutorialexamples/animated-sliding-elements/">Sliding Elements</a></p></li>
+                            </ul>
+                        </div>
+                        <div class="col col-lg-6">
+                            <h3>Design Process</h3>
+                            <ul>
+                                <li><a target="_blank" href="http://www.fastcodesign.com/1672657/google-s-dead-simple-tool-for-making-ux-decisions-2-jars-of-marbles#1">Android Design Principles</a> - 17 Principles | 2 Emotion Jars</li>
+                                <li><a target="_blank" href="http://www.designstaff.org/articles/product-design-sprint-2012-10-02.html">Design Sprint</a> - Google Ventures Design Thinking</li>
+                                <li><a target="_blank" href="http://looksgoodworkswell.blogspot.com/2012_10_01_archive.html">Lean UX Stream</a></li>
+                            </ul>
+                            <h3>How to Contribute</h3>
+                            <ul>
+                                <li><p><a href="{{ site.baseurl }}docs/dev-environment.html">Dev Environment notes</a> - Setup your local development environment to contribute code.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal">
+        <!-- Modal -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Catalog Records</h4>
+                </div>
+                <div class="modal-body">
+                    <p><code>Components</code> can be used <strong>once</strong>, or <strong>reused</strong> in other <code>Records</code> (Components, Views, Experiences, Themes)</p>
+                    <img src="{{ site.baseurl }}assets/img/docs/library01.png">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="myModal2">
+        <!-- Modal -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">What's Included</h4>
+                </div>
+                <div class="modal-body">
+                    <p>The <code>Catalog</code> and <code>Docs</code> help describe the <code>Code Base</code>, which is the artifact that is actually implemented.</p>
+                    <img src="{{ site.baseurl }}assets/img/docs/whatsincluded.png">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+    <!--Scripts-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}assets/js/libs/jquery.dataTables.min.js"></script>
+    <script src="{{ site.baseurl }}assets/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        /* Data set - can contain whatever information you want */
+        var aDataSetRecords = [
+            {{ content }}
+        ];
+
+        $(document).ready(function() {
+            $('#datagrid-records').dataTable( {
+                "aaData": aDataSetRecords,
+                "iDisplayLength": 100,
+                "aoColumns": [
+//                    { "sTitle": "ID" },
+                    { "sTitle": "Type" },
+                    { "sTitle": "Name" },
+                    { "sTitle": "Experience"},
+                    { "sTitle": "Theme" },
+                    { "sTitle": "Status" }
+
+                ]
+            } );
+
+            /* Popovers
+             =================================== */
+
+            // Select Headers
+            var status = $('th:contains(Status)');
+
+            // Insert Icons
+            status.append('<i class="glyphicons question-sign pull-right"></i>');
+
+            // Assign Content
+            status.find('i').popover({
+                trigger: 'click',
+                placement: 'top',
+                html: 'true',
+                title: 'Status',
+                content: '<ol>' +
+                        '<li>Needs Review</li>' +
+                        '<li>In Review</li>' +
+                        '<li>Approved</li>' +
+                        '<li>Retired</li>' +
+                        '<li>Not Supported</li></ol>'
+
+            });
+        } );
+
+    </script>

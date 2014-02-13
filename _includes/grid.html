@@ -1,0 +1,80 @@
+<div class="alert alert-info col-sm-4">
+    See <a class="alert-link" href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
+</div>
+
+{% contentfor notes %}
+<!--============ Docs  ============-->
+
+<p>Bootstrap includes a responsive, mobile-first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts.</p>
+<label>Grid Options</label>
+<table class="table table-bordered table-striped bs-table">
+    <thead>
+    <tr>
+        <th></th>
+        <th>
+            Tiny grid
+            <small>Phones (&lt;480px)</small>
+        </th>
+        <th>
+            Small grid
+            <small>Tablets (&lt;768px)</small>
+        </th>
+        <th>
+            Medium-large grid
+            <small>Desktops (&gt;768px)</small>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>Grid behavior</th>
+        <td>Horizontal at all times</td>
+        <td colspan="2">Collapsed to start, horizontal above breakpoints</td>
+    </tr>
+    <tr>
+        <th>Class prefix</th>
+        <td><code>.col-</code></td>
+        <td><code>.col-sm-</code></td>
+        <td><code>.col-xs-</code></td>
+    </tr>
+    <tr>
+        <th># of columns</th>
+        <td colspan="3">12</td>
+    </tr>
+    <tr>
+        <th>Nestable</th>
+        <td colspan="3">Yes</td>
+    </tr>
+    <tr>
+        <th>Offsets</th>
+        <td colspan="2" class="text-muted">N/A</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <th>Column ordering</th>
+        <td class="text-muted">N/A</td>
+        <td colspan="2">Yes</td>
+    </tr>
+    </tbody>
+</table>
+<a href="#stacked-to-horizontal">Stacked-to-Horizontal</a>
+<p>Using a single set of grid classes, you can create a basic grid system that starts out stacked on mobile and tablet devices before becoming horizontal on desktop devices.</p>
+<a href="#combine-mobile">Combining Mobile with Desktop</a>
+<p>Don't want your columns to simply stack in smaller devices? Use the small device grid system by adding <code>.col-*</code> classes to the existing <code>.col-xs-*</code> ones. See the example below for a better idea of how it all works.</p>
+<a href="#mobile-tablet">Mobile, Tablet, and Desktop</a>
+<p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.col-sm-*</code> classes.</p>
+<a href="#offset">Offsetting Columns</a>
+<p>Move columns to the right using <code>.col-offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.col-offset-4</code> moves <code>.col-xs-4</code> over four columns.</p>
+<a href="#nesting">Nesting Columns</a>
+<p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-xs-*</code> columns within an existing <code>.col-xs-*</code> column. Nested rows should include a set of columns that add up to 12.</p>
+<a href="#column">Column Ordering</a>
+<p>Easily change the order of our built-in grid columns with <code>.col-md-push-*</code> and <code>.col-md-pull-*</code> modifier classes.</p>
+<label>LESS Mixins and Variables</label>
+<ul>
+    <li><strong>Variables:</strong> Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns.</li>
+    <li><strong>Mixins:</strong> Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</li>
+</ul>
+
+<!--============ ! Docs  ============-->
+{% endcontentfor %}
+

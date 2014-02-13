@@ -1,0 +1,25 @@
+---
+layout: themes
+docs-enable: true
+
+record-type: theme
+name: NAME
+theme: THEME
+theme-url: {{ site.theme-THEME-url }}
+status: needs-review
+---
+<!--============ Record is below this line ============-->
+
+<!--Can be left blank-->
+
+<!--============ Record is above this line ============-->
+
+{% contentfor notes %}
+<!--============ Docs  ============-->
+
+<h2>Header</h2>
+<label>Label</label>
+<p>Paragraph</p>
+
+<!--============ ! Docs  ============-->
+{% endcontentfor %}

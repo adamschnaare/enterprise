@@ -1,0 +1,37 @@
+---
+layout: records
+docs-enable: true
+docs-container: true
+docs-hidden: false
+docs-no-padding: false
+
+categories: [EXPERIENCE]
+record-type: component
+name: NAME
+experience: EXPERIENCE
+theme: THEME
+theme-url: {{ site.theme-THEME-url }}
+status: needs-review
+
+variants:
+
+children:
+
+---
+<!--============ Record is below this line ============-->
+<!--STYLES: DO NOT INCLUDE IN PROD-->
+<style>
+</style>
+
+<!--Markup-->
+{%include FILENAME.html %}
+<!--/Markup-->
+
+
+{% contentfor scripts %}
+{% endcontentfor %}
+
+
+<!--Experience-Specific Notes-->
+{% contentfor notes %}
+{% endcontentfor %}

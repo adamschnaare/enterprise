@@ -1,0 +1,17 @@
+---
+layout: index
+title: Home
+---
+
+<!--Configure main index table here-->
+{% for page in site.pages  %}
+    {% if page.name and page.name != 'NAME' and page.name != 'EXPERIENCE' %}
+    [
+        '{{ page.record-type | capitalize }}',
+        '<a href="{{ page.url }}">{{ page.name | capitalize }}</a>',
+        '<a href="{{ site.baseurl }}records/{{ page.experience | downcase }}">{{ page.experience | capitalize }}</a>',
+        '<a href="{{ site.baseurl }}records/theme-{{ page.theme | downcase }}.html">{{ page.theme | capitalize }}</a>',
+        '{{ page.status | capitalize }}'
+    ],
+    {% endif %}
+{% endfor %}

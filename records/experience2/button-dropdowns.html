@@ -1,0 +1,38 @@
+---
+layout: records
+docs-enable: true
+docs-container: true
+docs-hidden: false
+docs-no-padding: false
+
+record-type: component
+name: button-dropdowns
+experience: experience2
+theme: master
+theme-url: {{ site.theme-master-url }}
+status: needs-review
+
+variants:
+- example-variant
+
+children:
+- example-child
+
+---
+<!--============ Record is below this line ============-->
+<!--STYLES: DO NOT INCLUDE IN PROD-->
+<style>
+</style>
+
+<!--Markup-->
+{%include button-dropdowns.html %}
+<!--/Markup-->
+
+
+{% contentfor scripts %}
+{% endcontentfor %}
+
+
+<!--Experience-Specific Notes-->
+{% contentfor notes %}
+{% endcontentfor %}

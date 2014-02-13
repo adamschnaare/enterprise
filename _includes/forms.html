@@ -1,0 +1,308 @@
+<style>
+    .bs-docs-example{margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;}
+</style>
+
+<div class="" id="forms">
+
+    <h3 id="forms-example">Basic example</h3>
+    <form class="bs-example" role="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <h3 id="forms-inline">Inline form</h3>
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Sign in</button>
+    </form>
+    <h3 id="forms-horizontal">Horizontal form</h3>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+        </div>
+    </form>
+    <h3 id="forms-controls">Supported form controls</h3>
+
+    <h4>Inputs</h4>
+    <form class="bs-docs-example form-inline">
+        <input type="text" class="form-control" placeholder="Text input">
+    </form>
+    <h4>Textarea</h4>
+    <form class="bs-docs-example form-inline">
+        <textarea class="form-control" rows="3"></textarea>
+    </form>
+    <h4>Checkboxes and radios</h4>
+    <h4>Default (stacked)</h4>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+        </label>
+    </div>
+    <h4>Inline checkboxes</h4>
+    <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+    </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+    </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+    </label>
+
+
+    <h4>Selects</h4>
+    <form class="bs-example">
+        <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br>
+        <select multiple="" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </form>
+    <h3 id="forms-control-states">Static Control</h3>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">email@example.com</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+    </form>
+
+    <h3 id="forms-control-states">Form control states</h3>
+    <h4 id="forms-input-focus">Input focus</h4>
+    <form class="bs-docs-example form-inline">
+        <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+    </form>
+
+    <h4 id="forms-disabled-inputs">Disabled inputs</h4>
+    <form class="bs-docs-example form-inline">
+        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+    </form>
+
+
+    <h4 id="forms-disabled-fieldsets">Disabled fieldsets</h4>
+    <form class="form-inline" role="form">
+        <fieldset disabled>
+            <div class="form-group">
+                <label for="disabledTextInput">Disabled input</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+            </div>
+            <div class="form-group">
+                <label for="disabledSelect">Disabled select menu</label>
+                <select id="disabledSelect" class="form-control">
+                    <option>Disabled select</option>
+                </select>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Can't check this
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+
+
+    <h4 id="forms-validation">Validation states</h4>
+    <form class="bs-example">
+        <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess">Input with success</label>
+            <input type="text" class="form-control" id="inputSuccess">
+        </div>
+        <div class="form-group has-warning">
+            <label class="control-label" for="inputWarning">Input with warning</label>
+            <input type="text" class="form-control" id="inputWarning">
+        </div>
+        <div class="form-group has-error">
+            <label class="control-label" for="inputError">Input with error</label>
+            <input type="text" class="form-control" id="inputError">
+        </div>
+    </form>
+
+    <h3 id="forms-control-states">Control Sizing</h3>
+    <h4 id="forms-validation">Height Sizing</h4>
+    <form class="bs-example bs-example-control-sizing">
+        <div class="controls docs-input-sizes">
+            <input class="form-control input-lg" type="text" placeholder=".input-lg">
+            <input type="text" class="form-control" placeholder="Default input">
+            <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+            <select class="form-control input-lg">
+                <option value="">.input-lg</option>
+            </select>
+            <select class="form-control">
+                <option value="">Default select</option>
+            </select>
+            <select class="form-control input-sm">
+                <option value="">.input-sm</option>
+            </select>
+        </div>
+    </form>
+    <h4 id="forms-validation">Column Sizing</h4>
+    <form class="bs-example" style="padding-bottom: 15px;">
+        <div class="row">
+            <div class="col-sm-2">
+                <input type="text" class="form-control" placeholder=".col-sm-2">
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" placeholder=".col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder=".col-sm-4">
+            </div>
+        </div>
+    </form>
+    <h4 id="forms-validation">Help Text</h4>
+    <form class="bs-example">
+        <input type="text" class="form-control">
+        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+    </form>
+</div>
+
+{% contentfor notes %}
+<!--============ Docs  ============-->
+
+<label><a href="#forms-example">Basic Example</a></label>
+<p>Individual form controls automatically receive some global styling. By default, inputs are set to <code>width: 100%;</code>.</p>
+<label>Inline Form</label>
+<p>Add <code>.form-inline</code> for left-aligned labels and inline-block controls for a compact layout.</p>
+<label>Horizontal Form</label>
+<p>Right align labels and float them to the left to make them appear on the same line as controls. Requires the most markup changes from a default form:</p>
+<ul>
+    <li>Add <code>.form-horizontal</code> to the form</li>
+    <li>Wrap labels and controls in <code>.control-group</code></li>
+    <li>Add <code>.control-label</code> to the label</li>
+    <li>Wrap any associated controls in <code>.controls</code> for proper alignment</li>
+</ul>
+<label>Inputs</label>
+<p>Most common form control, text-based input fields. Includes support for all HTML5 types: text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.</p>
+<p>Requires the use of a specified <code>type</code> at all times.</p>
+<label>Textarea</label>
+<p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+<label>Checkboxes & Radios</label>
+<p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
+<ul>
+    <li><strong>Inline:</strong> <code>.checkbox-inline</code> or <code>.radio-inline</code> makes checkboxes or radios inline.</li>
+    <li><strong>Multiple:</strong> Use the default option or specify a <code>multiple="multiple"</code> to show multiple options at once.</li>
+</ul>
+<label>Form Control States</label>
+<ul>
+    <li><strong>Input Focus:</strong> We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</li>
+    <li>
+        <strong>Invalid Inputs:</strong> Style inputs via default browser functionality with <code>:invalid</code>. Specify a <code>type</code>, add the <code>required</code> attribute if the field is not optional, and (if applicable) specify a <code>pattern</code>.
+        <p>This is not available in versions of Internet Explorer 7-9 due to lack of support for CSS pseudo selectors.</p>
+    </li>
+    <li><strong>Disabled Inputs:</strong> Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</li>
+    <li><strong>Disabled Fieldsets:</strong> Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within the <code>&lt;fieldset&gt;</code> at once. Link buttons (with the <code>&lt;a&gt;</code> element) will be aesthetically disabled, but you will need custom JavaScript to disable their behavior.</li>
+    <li>
+        <strong>Valid States:</strong> Bootstrap includes validation styles for error, warning, info, and success messages. To use:
+        <ul>
+            <li>Add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element<br></li>
+            <li>Add <code>.input-with-feedback</code> to the field(s) in question</li>
+        </ul>
+        <p>Validation styles are applied on a per-input basis. With horizontal forms, the <code>&lt;label class="control-label"&gt;</code> will always be styled.</p>
+    </li>
+</ul>
+<label>Extending Forms Controls</label>
+<p>Adding on top of existing browser controls, Bootstrap includes other useful form components.</p>
+<ul>
+    <li>
+        <strong>Input Groups:</strong> Add text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with a <code>.add-on</code> to prepend or append elements to an <code>&lt;input&gt;</code>.
+        <p>Avoid using <code>&lt;select&gt;</code> elements here as they cannot be fully styled in WebKit browsers.</p>
+    </li>
+    <li><strong>Optional Sizes:</strong> Add the relative form sizing classes to the `.input-group-addon`.</li>
+    <li><strong>Buttons Instead of Text:</strong> Buttons in input groups are a bit different and require one extra level of nesting. Instead of <code>.input-group-addon</code>, you'll need to use <code>.input-group-btn</code> to wrap the buttons. This is required due to default browser styles that cannot be overridden.</li>
+</ul>
+<label>Contol Sizing</label>
+<p>Use relative sizing classes like <code>.input-large</code> or match your inputs to the grid column sizes using <code>.span*</code> classes.</p>
+<ul>
+    <li><strong>Relative Sizing:</strong> Create larger or smaller form controls that match button sizes.</li>
+    <li><strong>Column Sizing:</strong> Use <code>.col col-xs-1</code> to <code>.col col-xs-12</code> for setting widths on inputs that match Bootstrap's grid system.</li>
+    <li><strong>Form Actions:</strong> End a form with a group of actions (buttons). When placed within a <code>.form-horizontal</code>, the buttons will automatically indent to line up with the form controls.</li>
+</ul>
+<label>Help Text</label>
+<p>Inline and block level support for help text that appears around form controls.</p>
+
+<!--============ ! Docs  ============-->
+{% endcontentfor %}

@@ -1,0 +1,9 @@
+/*20*14px = 280px*/
+/* ==================================
+    Supplimental Mixins (waiting to see if these get included in BS3 or not
+=================================== */
+.make-row.max-width {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}

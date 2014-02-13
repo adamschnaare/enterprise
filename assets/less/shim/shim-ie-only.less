@@ -1,0 +1,63 @@
+/* ==================================
+    IE Hacks:
+=================================== */
+@import "../build/variables-metro"; // Note, this is a hack of hacks :). Will need to change variables depending on what theme you are building the hacks for.
+
+// Mixins
+// -------------------------
+.background-ie(@color: @white, @alpha: 1) {
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{color},endColorstr=@{color})"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="@{color}",endColorstr="@{color}");   /* IE6 & 7 */
+  zoom: 1;
+}
+.box-shadow-ie() {
+  -webkit-box-shadow: none !important; // iOS <4.3 & Android <4.1
+  box-shadow: none !important;
+}
+
+
+// - view-merch(classic).html
+// -------------------------
+// metrics
+.panel-metrics-fixed{display: none;}
+.panel-ie{display: block;}
+
+// Checklist
+.accordion-checklist{
+  .accordion-inner{
+    // Video
+    //object{.video-inner();}
+    span:last-child{
+      position: relative;
+      height: auto;
+      overflow: hidden;
+      padding-bottom:0;
+      display: block;
+    }
+    object.video{
+      position: relative;
+
+    }
+  }
+}
+
+// - view-homepage.html (yba-demo)
+// -------------------------
+
+.backgroundmedia-caption{
+  .background-ie(@component-bg-dark, @component-bg-dark-opacity);
+}
+.controlpanel{
+  .background-ie(lighten(@controlpanel-bg,10%), @controlpanel-opacity);
+}
+.navbar-mainmenu .dropdown-menu{
+  border: 0;
+}
+.btn-group-justified .btn{width:50%;}
+
+// Panel on Mobile
+// --------------------------------------------------
+.visible-xs{
+  .panel-title a.accordion-toggle{background-color: #222}
+}
